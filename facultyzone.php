@@ -123,11 +123,12 @@ else
         <a class="nav-link" data-toggle="tab" href="#professional">Professional</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#report">Report</a>
-      </li>
-      <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#at">Attendance</a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="quiz-app/index.html">Event</a>
+      </li>
+
     </ul>
 
     <div class="tab-content">
@@ -937,91 +938,100 @@ echo "</div>";
 
 </div>
 <div id="report" class="container tab-pane fade">
-  <?php
-include ('connection.php');
-    $query="select seminar from research";
-    $result=mysqli_query($conn,$query);
-    $query1="select number_of_research from research";
-    $result1=mysqli_query($conn,$query1);
 
-    if(isset($_POST['Generate']))
-    {
-      $name=$_POST["ide"];
-      $query2="select f_id from research WHERE Number_of_research='$name'";
-      $result2=mysqli_query($conn,$query2);
-      while($row=mysqli_fetch_array($result2)):;
-      echo $row[0];
-      endwhile;
-    }
-  ?>
 
+</div>
+<div id="NAV" class="container tab-pane fade">
+
+  <style>
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+</style>
 </head>
 <body>
 
-<div class="container" >
-  <center><h2>Report Generation</h2></center>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </div>
-</br></br>
-<form  class="form-horizontal" action="" method="post" target="_blank">
-  <div class="form-group ">
-      <label class="control-label col-sm-4" for="email">Number_of_seminar_conducted</label>
-      <div class="col-sm-5">
-        <select class="form-control" id="#sel1" name="ide" required>
-          <option value="1" selected>Select..</option>
-          <?php while($row=mysqli_fetch_array($result)):;?>
-          <option><?php echo $row[0];?></option>
-        <?php endwhile;?>
-        <!---->
-        <?php if (isset($ide) && $ide=="2") echo "checked";?>
-        </select>
-      </div>
-    </div>
-    <div class="form-group ">
-      <label class="control-label col-sm-4" for="Number_of_research">Number_of_research</label>
-      <div class="col-sm-5">
-        <select name="seminar" class="form-control" id="sel2"  required>
-            <option value="1" selected>Select..</option>
-          <?php while($row=mysqli_fetch_array($result1)):;?>
-          <option><?php echo $row[0];?></option>
-        <?php endwhile;?>
-        </select>
-      </div>
-    </div>
-    <div class="form-group" id="ide">
-      <label class="control-label col-sm-4">Start Date</label>
-      <div class="col-sm-5">
-          <input type="date" class="form-control" name="Start date" required>
-     </div>
-  </div>
-      <div class="form-group">
-        <label class="control-label col-sm-4">End Date</label>
-        <div class="col-sm-5">
-             <input type="date" class="form-control" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-4">Experience(in years)</label>
-      <div class="col-sm-5">
-      <input type="number" min="0" class="form-control" required>
-    </div>
-  </div>
-     <div class="form-group ">
-       <label class="control-label col-sm-4" for="email">Report-Format:</label>
-       <div class="col-sm-5">
-         <select class="form-control" id="sel1" name="doc1" required>
-           <option></option>
-           <option>Doc File</option>
-           <option>Excel File</option>
-         </select>
-    </div>
- </div>
-     <div class="modal-footer">
-      <input type="submit" class="btn btn-info" name="Generate" value="Generate"></input>
-  </div>
 
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Toggle Sidebar</button>
+  <h2>Collapsed Sidebar</h2>
+  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+</div>
 
+<script>
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
 
-</form>
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
 </div>
 </div>
 

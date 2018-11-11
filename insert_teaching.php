@@ -8,7 +8,6 @@ $area_expertise=$_POST['area_expertise'];
 $designation=$_POST['designation'];
 $phd_guide=mysqli_real_escape_string($conn,$_POST['phd_guide']);
 $f_id=$_SESSION['user1'];
-
 $check_qry="select * from teaching where f_id='$f_id'";
 $res1=mysqli_query($conn,$check_qry);
 if (mysqli_num_rows($res1) <= 0) {
