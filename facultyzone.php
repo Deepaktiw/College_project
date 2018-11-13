@@ -45,8 +45,8 @@ function image(img) {
   </script>
 </head>
 <body background="bg_image3.jpg" onload='window.location.href='mario.html';'>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Icfai Tech School</a>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="https://www.ifheindia.org/icfaitech">Icfai Tech School</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -109,9 +109,9 @@ else
       </div>
     </div>
   </div>
-  <ul class="nav nav-tabs" role="tablist" id="myTab">
+  <ul class="nav nav-tabs" style="background-color: #c2e9fb;" role="tablist" id="myTab">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#personal">Personal</a>
+        <a class="nav-link" data-toggle="tab" href="#personal">Personal</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#teaching">Teaching</a>
