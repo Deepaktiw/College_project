@@ -8,6 +8,6 @@ if(mysqli_query($conn,$sql))
 header("refresh:0.5; url=facultyzone.php");
 else
 {
-  echo"NOt deleted";
+  echo"NOt yet deleted";
 }
  ?>
